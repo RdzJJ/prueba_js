@@ -26,5 +26,13 @@ function App() {
     window.scrollTo(0, 0);
   };
 
-  const handlePreviousPage
-export default App;
+  const handlePreviousPage = () => {
+    fetchCharacters(info.prev);
+    window.scrollTo(0, 0);
+};
+
+useEffect(() => {
+  fetchCharacters(url);
+}, [])
+
+return (
