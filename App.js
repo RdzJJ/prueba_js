@@ -33,6 +33,14 @@ function App() {
 
 useEffect(() => {
   fetchCharacters(url);
-}, [])
+}, []);
 
 return (
+  <>
+    <Navbar brand="Rick and Morty App"/>
+
+    <div className="container py-5">
+      <nav>
+        <ul className="pagination justify-content-center">
+          {info.prev ? (
+            <li className="page-item">
