@@ -1,13 +1,15 @@
-import React from "react"
+import React from "react";
 
 const Navbar = ({ brand }) => {
-    return (
+  return (
     <nav className="navbar navbar-dark bg-dark">
       <div className="container">
-         <a className="navbar-brand text_uppercase" href="/">{brand}</a>
-    </div>
-  </nav>
-    )
-}
+        <a className="navbar-brand text-uppercase" href="/">
+          {brand}
+        </a>
+      </div>
+    </nav>
+  );
+};
 
- export default Navbar
+export default Navbar;

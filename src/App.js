@@ -5,9 +5,9 @@ import Navbar from "./components/Navbar";
 import CharacterList from "./components/CharacterList";
 
 function App() {
-  const [characters,setCharacters] = useState([]);
+  const [characters, setCharacters] = useState([]);
   const [info, setInfo] = useState({});
-  const url ="https://rickandmortyapi.com/api/character";
+  const url = "https://rickandmortyapi.com/api/character";
 
   const fetchCharacters = (url) => {
     axios
@@ -19,7 +19,7 @@ function App() {
       .catch((error) => {
         console.log(error);
       });
-};
+  };
 
   const handleNextPage = () => {
     fetchCharacters(info.next);
@@ -29,22 +29,22 @@ function App() {
   const handlePreviousPage = () => {
     fetchCharacters(info.prev);
     window.scrollTo(0, 0);
-};
+  };
 
-useEffect(() => {
-  fetchCharacters(url);
-}, []);
+  useEffect(() => {
+    fetchCharacters(url);
+  }, []);
 
-return (
-  <>
-    <Navbar brand="Rick and Morty App"/>
+  return (
+    <>
+      <Navbar brand="Rick and Morty App" />
 
-    <div className="container py-5">
-      <nav>
-        <ul className="pagination justify-content-center">
-          {info.prev ? (
-            <li className="page-item">
-               <button className="page-link" onClick={handlePreviousPage}>
+      <div className="container py-5">
+        <nav>
+          <ul className="pagination justify-content-center">
+            {info.prev ? (
+              <li className="page-item">
+                <button className="page-link" onClick={handlePreviousPage}>
                   Previous
                 </button>
               </li>
